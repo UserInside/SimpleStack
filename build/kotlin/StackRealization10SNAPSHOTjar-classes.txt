@@ -1,1 +1,1 @@
-/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/MainKt.class:/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/Queue.class:/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/Stack.class
+/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/MainKt.class:/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/Queue.class:/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/QueueDoubleSided.class:/home/igor/IdeaProjects/StackRealization/build/classes/kotlin/main/Stack.class

@@ -22,21 +22,26 @@ class Queue(private val size: Int) {
         return
     }
 
-    fun dequeue() {
+    fun dequeue(): Int? {
         if (queue[headIndex] == null) {
             println("Очередь пуста")
-            return
+            return null
         }
+        val res = queue[headIndex]
+
         queue[headIndex] = null
 
         if (headIndex + 1 == size && queue[0] != null) {
             headIndex = 0
-            println("Содержимое очереди после удаления  - ${queue.joinToString()}")
-            return
+        } else {
+            if (queue[headIndex + 1] != null) {
+                headIndex++
+            }
         }
 
-        if (queue[headIndex+1] != null) headIndex++
         println("Содержимое очереди после удаления - ${queue.joinToString()}")
-        return
+        return res
     }
+
+
 }
