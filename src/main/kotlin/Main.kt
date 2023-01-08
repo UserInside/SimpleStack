@@ -1,50 +1,33 @@
-import java.io.IOException
 
 fun main() {
     val stack = Stack()
-    stack.add(4)
-    stack.add(1)
-    stack.add(3)
-    stack.remove()
-    stack.add(8)
-    stack.remove()
+    stack.push(4)
+    stack.push(1)
+    stack.push(3)
+    stack.pop()
+    stack.push(8)
+    stack.pop()
 
-}
+    println()
 
-class Stack {
-    private var stack = arrayOfNulls<Int>(0)
+    val queue = Queue(6)
+    queue.enqueue(4)
+    queue.enqueue(1)
+    queue.enqueue(3)
+    queue.dequeue()
+    queue.enqueue(8)
+    queue.dequeue()
+    queue.enqueue(1)
+    queue.enqueue(7)
+    queue.enqueue(2)
+    queue.dequeue()
+    queue.dequeue()
+    queue.enqueue(4)
+    queue.enqueue(8)
+    queue.enqueue(5)
+    queue.enqueue(77)
+    repeat(7) { queue.dequeue() }
 
-    fun add(addition: Int): Array<Int?> {
-        val stack = arrayOfNulls<Int>(size = this.stack.size + 1)
-        if (stack.size == 1) {
-            stack[stack.lastIndex] = addition
-            this.stack = stack
-            println("Содержимое стека - ${this.stack.joinToString()}")
-            return stack
-        }
 
-        for (i in 0 until stack.size - 1) {
-            stack[i] = this.stack[i]
-        }
-        stack[stack.lastIndex] = addition
-        this.stack = stack
-        println("Содержимое стека - ${this.stack.joinToString()}")
-        return stack
-    }
 
-    fun remove(): Array<Int?> {
-        if (this.stack.isEmpty()) throw IOException("Stack is already empty")
-        val stack = arrayOfNulls<Int>(size = this.stack.size - 1)
-        for (i in stack.indices) {
-            stack[i] = this.stack[i]
-        }
-        this.stack = stack
-        return if (this.stack.isNotEmpty()) {
-            println("Содержимое стека - ${this.stack.joinToString()}")
-            stack
-        } else {
-            println("Стек пуст")
-            stack
-        }
-    }
 }
